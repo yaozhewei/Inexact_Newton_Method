@@ -9,6 +9,29 @@ Specifically, multilayer perceptron(MLP) networks and non-linear least squares(N
 ### MLP networks
 
 #### Example: Mnist Classification
+- <code>[mlp](./mlp)</code>: This folder contains all the source code for implementing the mnist classification task. 
+- <code>[mlp/optim](.mlp/optim.py)</code> contains the implementation of (sub-sampled) TR algorithm.
+
+Run the first order methods:
+```
+export CUDA_VISIBLE_DEVICES=0; export CUDA_VISIBLE_DEVICES=1; python mnist_first_order_method.py --optimizer-type sgd --lr 0.01 --hidden 128 --saving-folder checkpoints/128_sgd_0.01 
+
+--optimizer-type: sgd, adagrad, adam
+--lr: 0.1, 0.01, 0.001, 0.0001
+--hidden: 1024, 128, 16
+--saving-folder: set properly
+```
+
+Run the trust region mehods:
+```
+export CUDA_VISIBLE_DEVICES=0; python mnist_str.py --grad-size sub --grad-batch-size 5000 --hidden 128 --saving-folder checkpoints/128_sub
+
+--grad-size: sub (means Inexact TR), full (means SubH TR)
+--hidden: 1024, 128, 16
+--saving-folder: set properly
+```
+
+The reuslts are saved in the --saving-folder/log.log
 
 ### NLS
 - <code>[nls](./nls)</code>: This folder contains all the source code for implementing the binary linear classification task using square loss (which gives a non-linear square problem). 
