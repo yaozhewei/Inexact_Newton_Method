@@ -8,9 +8,9 @@ Specifically, multilayer perceptron(MLP) networks and non-linear least squares(N
 
 ### MLP networks
 
-#### Example: Mnist Classification
+#### Example: MNIST Classification
 - <code>[mlp](./mlp)</code>: This folder contains all the source code for implementing the mnist classification task. 
-- <code>[mlp/optim](.mlp/optim.py)</code> contains the implementation of (sub-sampled) TR algorithm.
+- <code>[mlp/optim](./mlp/optim.py)</code> contains the implementation of (sub-sampled) TR algorithm.
 
 Run the first order methods:
 ```
